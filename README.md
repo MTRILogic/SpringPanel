@@ -1,5 +1,4 @@
-# SpringPanel
-
+# SpringPanel (V1 o Legacy)
 [![](https://jitpack.io/v/MTRILogic/SpringPanel.svg)](https://jitpack.io/#MTRILogic/SpringPanel)
 
 A fluent API wrapper for Java Swing's SpringLayout that simplifies complex UI layouts with intuitive method chaining.
@@ -232,8 +231,10 @@ The Restrictions inner class temporarily stores constraint configuration until a
 - ✅ Thread-safe constraint application
 - ✅ Zero external dependencies
 
-## 🤝 Contributing
+## New Version
+SpringPanel (V2) available [here](https://github.com/MTRILogic/SpringPanel2)
 
+## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License

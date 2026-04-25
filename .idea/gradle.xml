@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/demo" />
           </set>
         </option>
         <option name="myGradleHome" value="C:\Gradle\gradle-7.5.1" />
