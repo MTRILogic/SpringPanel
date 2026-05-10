@@ -11,9 +11,15 @@ public class BaselineDemo extends SpringPanel {
         JPanel northPanel = createNorthPanel();
         JPanel baselinePanel = createBaselinePanel();
         // Position north panel at top, full width
-        with(northPanel).north(0).west(0).east(0).height(130).apply();
+        with(northPanel)
+                .north(0)
+                .hFill(0)
+                .height(130);
         // Position baseline panel below north panel, remaining space
-        with(baselinePanel).north(northPanel, 0).west(0).east(0).south(0).apply();
+        with(baselinePanel)
+                .north(northPanel, 0)
+                .hFill(0)
+                .south(0);
     }
 
     static void main() {
@@ -31,53 +37,44 @@ public class BaselineDemo extends SpringPanel {
     }
 
     private static JPanel createNorthPanel() {
-        SpringPanel panel = new SpringPanelImpl();
+        SpringPanel panel = new SpringPanel();
         panel.setBorder(BorderFactory.createTitledBorder("NORTH (visually misaligned)"));
 
         JLabel label = new JLabel("Name:");
         JTextField field = new JTextField("Example text");
-        field.setPreferredSize(new Dimension(200, 40)); // Make field taller
 
         // Position label at top-left
         panel.with(label)
                 .north(10)
-                .west(10)
-                .apply();
+                .west(10);
 
         // Position field using NORTH alignment (misaligned with label text)
         panel.with(field)
                 .north(10)   // Aligns to top edge, not baseline
                 .west(label, 10)
-                .apply();
+                .rectangle(200, 40);
 
         return panel;
     }
 
     private static JPanel createBaselinePanel() {
-        SpringPanel panel = new SpringPanelImpl();
+        SpringPanel panel = new SpringPanel();
         panel.setBorder(BorderFactory.createTitledBorder("BASELINE (correct alignment)"));
 
         JLabel label = new JLabel("Name:");
         JTextField field = new JTextField("Example text");
-        field.setPreferredSize(new Dimension(200, 40)); // Same size as other field
 
         // Position label at top-left
         panel.with(label)
                 .north(10)
-                .west(10)
-                .apply();
+                .west(10);
 
         // Position field using BASELINE alignment (aligned with label text)
         panel.with(field)
-                .baseline(label, 0) // Aligns text baselines
+                .baseline(label) // Aligns text baselines
                 .west(label, 10)
-                .apply();
+                .rectangle(200, 40);
 
         return panel;
-    }
-
-    // Concrete implementation of SpringPanel for demo
-    private static class SpringPanelImpl extends SpringPanel {
-
     }
 }
