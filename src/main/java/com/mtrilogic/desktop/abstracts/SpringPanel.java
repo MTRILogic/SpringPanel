@@ -164,7 +164,7 @@ public class SpringPanel extends JPanel {
         public ConstraintsBuilder east(JComponent other, int pad) {
             requireNonNullComponent(other);
             validatePad(pad, "EAST");
-            layout.putConstraint(SpringLayout.EAST, component, pad, SpringLayout.WEST, other);
+            layout.putConstraint(SpringLayout.EAST, component, -pad, SpringLayout.WEST, other);
             return this;
         }
 
@@ -177,7 +177,7 @@ public class SpringPanel extends JPanel {
          */
         public ConstraintsBuilder east(int pad) {
             validatePad(pad, "EAST");
-            layout.putConstraint(SpringLayout.EAST, component, pad, SpringLayout.EAST, SpringPanel.this);
+            layout.putConstraint(SpringLayout.EAST, component, -pad, SpringLayout.EAST, SpringPanel.this);
             return this;
         }
 
@@ -192,7 +192,7 @@ public class SpringPanel extends JPanel {
         public ConstraintsBuilder south(JComponent other, int pad) {
             requireNonNullComponent(other);
             validatePad(pad, "SOUTH");
-            layout.putConstraint(SpringLayout.SOUTH, component, pad, SpringLayout.NORTH, other);
+            layout.putConstraint(SpringLayout.SOUTH, component, -pad, SpringLayout.NORTH, other);
             return this;
         }
 
@@ -205,7 +205,7 @@ public class SpringPanel extends JPanel {
          */
         public ConstraintsBuilder south(int pad) {
             validatePad(pad, "SOUTH");
-            layout.putConstraint(SpringLayout.SOUTH, component, pad, SpringLayout.SOUTH, SpringPanel.this);
+            layout.putConstraint(SpringLayout.SOUTH, component, -pad, SpringLayout.SOUTH, SpringPanel.this);
             return this;
         }
 
